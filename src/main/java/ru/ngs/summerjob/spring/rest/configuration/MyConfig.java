@@ -14,10 +14,18 @@ import java.beans.PropertyVetoException;
 import java.util.Properties;
 
 @Configuration
-@ComponentScan(basePackages = "ru.ngs.summerjob.springrest")
+@ComponentScan(basePackages = "ru.ngs.summerjob.spring.rest")
 @EnableWebMvc
 @EnableTransactionManagement
 public class MyConfig {
+//
+//    @Bean
+//    public InternalResourceViewResolver resolver() {
+//        InternalResourceViewResolver resolver = new InternalResourceViewResolver();
+//        resolver.setPrefix("/WEB-INF/view/");
+//        resolver.setSuffix(".jsp");
+//        return resolver;
+//    }
 
     @Bean
     public DataSource dataSource() {
