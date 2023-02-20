@@ -1,10 +1,7 @@
 package ru.ngs.summerjob.spring.rest.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import ru.ngs.summerjob.spring.rest.entity.Employee;
 import ru.ngs.summerjob.spring.rest.exception_handling.NoSuchEmployeeException;
 import ru.ngs.summerjob.spring.rest.service.EmployeeService;
@@ -33,6 +30,14 @@ public class MyRestController {
         }
         return employee;
 
+    }
+
+    @PostMapping("/employees")
+    public Employee addNewEmployee(@RequestBody Employee employee) {
+
+        employeeService.saveEmployee(employee);
+
+        return employee;
     }
 
     //just test method...
